@@ -19,9 +19,25 @@ var library = {
                p02: { id: "p02",
                       name: "Other Playlist",
                       tracks: ["t03"]
-                    }
+                    },
+             },
+  printPlaylists: function () {
+                    for(var playlist in this.playlists){
+                    var tempPlaylist = this.playlists[playlist];
+                    console.log(tempPlaylist.id + ": " + tempPlaylist.name + " - " + tempPlaylist.tracks.length + ' tracks');
+                  }
+                },
+  printTracks : function () {
+              for(var track in this.tracks){
+                var tempTrack = this.tracks[track];
+                console.log(tempTrack.id + ": " + tempTrack.name + " by " + tempTrack.artist + " (" + tempTrack.album + ")");
              }
+            }
 }
+
+// library.printPlaylists();
+library.printTracks();
+
 
 // FUNCTIONS TO IMPLEMENT:
 
@@ -142,7 +158,6 @@ var printSearchResults = function(query) {
   console.log(results);
 }
 
-printSearchResults('Three');
 
 
 
